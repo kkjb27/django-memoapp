@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+    <meta charset='UTF-8'>
+    <title>memo_list</title>
+</head>
+<body>
+    <p>memo_list page</p>
+    {% for memo in memos %}
+        <p>・{{ memo.text }}</p>
+    {% endfor %}
+</body>
+</html>
