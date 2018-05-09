@@ -6,8 +6,8 @@
 </head>
 <body>
     <p>memo_list page</p>
-    {% for memo in memos %}
-        <p>・{{ memo.text }}</p>
+    {% for memo in memo_list %}
+        <p>{{ memo.id }} {{ memo.text }} {{ memo.updated_at }} {{ memo.created_at }}</p>
     {% endfor %}
 </body>
 </html>

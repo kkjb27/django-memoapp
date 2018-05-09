@@ -5,5 +5,5 @@ app_name = 'memoapp'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('memo_list/', views.list_view, name='list_view'),
+    path('memo_list/', views.MemoListView.as_view(), name='memo_list_view'),
 ]
