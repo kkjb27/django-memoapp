@@ -2,12 +2,12 @@
 <html lang='ja'>
 <head>
     <meta charset='UTF-8'>
-    <title>memo_list</title>
+    <title>メモアプリ</title>
 </head>
 <body>
     <p>memo_list page</p>
     {% for memo in memo_list %}
-        <p>{{ memo.id }} {{ memo.text }} {{ memo.updated_at }} {{ memo.created_at }}</p>
+        <p>{{ memo.id }} {{ memo.text }} {{ memo.created_at }} {{ memo.updated_at }}</p>
     {% endfor %}
 </body>
 </html>
