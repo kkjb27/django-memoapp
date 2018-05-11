@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from memo.models import Memo
 from django.urls import reverse_lazy
 
@@ -29,5 +29,14 @@ class MemoCreateView(CreateView):
     """メモ作成ページ"""
     model = Memo
     template_name = 'memo/memo_form.html'  # 省略可
+    fields = ['text']  # 入力するフィールドを指定
+    success_url = reverse_lazy('memoapp:memo_list_view')
+
+
+class MemoUpdateView(UpdateView):
+    """メモ編集ページ"""
+    model = Memo
+    template_name = 'memo/memo_update_form.html'  # 省略可
+    pk_url_kwarg = 'id'  # 指定しないとpk
     fields = ['text']  # 入力するフィールドを指定
     success_url = reverse_lazy('memoapp:memo_list_view')
