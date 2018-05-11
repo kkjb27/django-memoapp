@@ -5,10 +5,10 @@
     <title>メモアプリ</title>
 </head>
 <body>
-    <p>memo_update page</p>
+    <p>memo_delete page</p>
 
     <form method="post">{% csrf_token %}
-        {{ form }}  <!--form.as_pにすると<p>タグで囲まれる-->
+        <p>Are you sure you want to delete "{{ object }}"?</p>
         <input type="submit">
     </form>
 

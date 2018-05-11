@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from memo.models import Memo
 from django.urls import reverse_lazy
 
@@ -30,7 +30,7 @@ class MemoCreateView(CreateView):
     model = Memo
     template_name = 'memo/memo_form.html'  # 省略可
     fields = ['text']  # 入力するフィールドを指定
-    success_url = reverse_lazy('memoapp:memo_list_view')
+    success_url = reverse_lazy('memoapp:memo_list')
 
 
 class MemoUpdateView(UpdateView):
@@ -39,4 +39,12 @@ class MemoUpdateView(UpdateView):
     template_name = 'memo/memo_update_form.html'  # 省略可
     pk_url_kwarg = 'id'  # 指定しないとpk
     fields = ['text']  # 入力するフィールドを指定
-    success_url = reverse_lazy('memoapp:memo_list_view')
+    success_url = reverse_lazy('memoapp:memo_list')  # 成功したら一覧ページに飛ぶ
+
+
+class MemoDeleteView(DeleteView):
+    """メモ削除ページ"""
+    model = Memo
+    template_name = 'memo/memo_confirm_delete.html'  # 省略可
+    pk_url_kwarg = 'id'  # 指定しないとpk
+    success_url = reverse_lazy('memoapp:memo_list')  # 成功したら一覧ページに飛ぶ
