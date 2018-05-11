@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+    <meta charset='UTF-8'>
+    <title>メモアプリ</title>
+</head>
+<body>
+    <p>memo_form page</p>
+
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}  <!--form.as_pにすると<p>タグで囲まれる-->
+        <input type="submit">
+    </form>
+
+</body>
+</html>

@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from memo.models import Memo
+from django.urls import reverse_lazy
 
 
 def index(request):
@@ -22,3 +23,11 @@ class MemoDetailView(DetailView):
     template_name = 'memo/memo_detail.html'  # 省略可
     context_object_name = 'memo'  # 省略可
     pk_url_kwarg = 'id'  # 指定しないとpk
+
+
+class MemoCreateView(CreateView):
+    """メモ作成ページ"""
+    model = Memo
+    template_name = 'memo/memo_form.html'  # 省略可
+    fields = ['text']  # 入力するフィールドを指定
+    success_url = reverse_lazy('memoapp:memo_list_view')
