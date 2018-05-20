@@ -26,11 +26,6 @@ class MemoCreateView(CreateView):
     template_name = 'memo/memo_form.html'  # 省略可
     success_url = reverse_lazy('memoapp:memo_list')
 
-    # model = Memo
-    # template_name = 'memo/memo_form.html'  # 省略可
-    # fields = ['text']  # 入力するフィールドを指定
-    # success_url = reverse_lazy('memoapp:memo_list')
-
 
 class MemoUpdateView(UpdateView):
     """メモ編集ページ"""
@@ -39,12 +34,6 @@ class MemoUpdateView(UpdateView):
     template_name = 'memo/memo_update_form.html'
     pk_url_kwarg = 'id'
     success_url = reverse_lazy('memoapp:memo_list')
-
-    # model = Memo
-    # template_name = 'memo/memo_update_form.html'  # 省略可
-    # pk_url_kwarg = 'id'  # 指定しないとpk
-    # fields = ['text']  # 入力するフィールドを指定
-    # success_url = reverse_lazy('memoapp:memo_list')  # 成功したら一覧ページに飛ぶ
 
 
 class MemoDeleteView(DeleteView):
