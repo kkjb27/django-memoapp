@@ -29,6 +29,11 @@ a:hover {
     background-color: cornflowerblue;
 }
 
+.memo_table {
+    width: 100%;
+    table-layout: fixed;
+}
+
 .memo_table td {
     /* メモ一覧テーブルのスタイル */
     border-bottom: 1px dashed black;
@@ -37,29 +42,29 @@ a:hover {
 
 .col1 {
     /* テキストの表示 */
-    width: 70%;
     font-size: 24px;
     padding-left: 20px;
-    color: green;
+    padding-right: 20px;
+    word-wrap: break-word;
 }
 
 .col2 {
     /* 日時の表示 */
-    width: 15%;
+    width: 100px;
     font-size: 10px;
     vertical-align: bottom;
 }
 
 .col3 {
     /* 編集ボタンの表示 */
-    width: 3%;
+    width: 20px;
     font-size: 10px;
     vertical-align: bottom;
 }
 
 .col4 {
     /* 削除ボタンの表示 */
-    width: 3%;
+    width: 20px;
     font-size: 10px;
     vertical-align: bottom;
 }
