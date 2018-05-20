@@ -1,13 +1,27 @@
-<!DOCTYPE html>
-<html lang='ja'>
-<head>
-    <meta charset='UTF-8'>
-    <title>メモアプリ</title>
-</head>
-<body>
-    <p>memo_list page</p>
+{% extends 'memo/base.html' %}
+
+{% block content %}
+    <a href="{% url 'memoapp:memo_form' %}">
+        <div class="create_button">
+            メモ作成
+        </div>
+    </a>
+    <table class="memo_table">
     {% for memo in memo_list %}
-        <p>{{ memo.id }} {{ memo.text }} {{ memo.created_at }} {{ memo.updated_at }}</p>
+        <tr>
+            <td class="col1">
+                <a href="{% url 'memoapp:memo_detail' memo.id %}">{{ memo.text }}</a>
+            </td>
+            <td class="col2">
+                {{ memo.updated_at|date:"Y/m/d G:i" }}
+            </td>
+            <td class="col3">
+                <a href="{% url 'memoapp:memo_update' memo.id %}">編集</a>
+            </td>
+            <td class="col4">
+                <a href="{% url 'memoapp:memo_delete' memo.id %}">削除</a>
+            </td>
+        </tr>
     {% endfor %}
-</body>
-</html>
+    </table>
+{% endblock %}

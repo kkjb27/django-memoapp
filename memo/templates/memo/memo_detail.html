@@ -1,11 +1,26 @@
-<!DOCTYPE html>
-<html lang='ja'>
-<head>
-    <meta charset='UTF-8'>
-    <title>メモアプリ</title>
-</head>
-<body>
-    <p>memo_detail page</p>
-    <p> {{ memo.id }} {{ memo.text }} {{memo.created_at}} {{ memo.updated_at }}</p>
-</body>
-</html>
+{% extends 'memo/base.html' %}
+
+{% block content %}
+    <p><a href="{% url 'memoapp:memo_list' %}" class="back_button">＜一覧</a></p>
+
+    <div style="background-color: lightblue;">
+        <table cellpadding="4">
+            <tr>
+                <td width="100">ID</td>
+                <td>{{ memo.id }}</td>
+            </tr>
+            <tr>
+                <td>メモ</td>
+                <td>{{ memo.text }}</td>
+            </tr>
+            <tr>
+                <td>作成日時</td>
+                <td>{{ memo.created_at|date:"Y/m/d G:i:s" }}</td>
+            </tr>
+            <tr>
+                <td>編集日時</td>
+                <td>{{ memo.updated_at|date:"Y/m/d G:i:s" }}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

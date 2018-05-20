@@ -1,0 +1,121 @@
+a {
+    /* リンクに下線を引かない */
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    /* リンクにカーソルを合わせたときのスタイル */
+    color: dodgerblue;
+}
+
+.content {
+    /* body全体のスタイル */
+    margin: 20px 30px 20px 30px; /* top right button left */
+}
+
+.create_button{
+    /* 作成ボタンのスタイル */
+    background-color: lightblue;
+    text-align: center;
+    font-size: large;
+    color: white;
+    padding: 10px 0 10px 0;
+    margin: 20px 0 20px 0;
+}
+
+.create_button:hover {
+    /* 作成ボタンにカーソルを合わせたときのスタイル */
+    background-color: cornflowerblue;
+}
+
+.memo_table td {
+    /* メモ一覧テーブルのスタイル */
+    border-bottom: 1px dashed black;
+    padding-top: 20px;
+}
+
+.col1 {
+    /* テキストの表示 */
+    width: 70%;
+    font-size: 24px;
+    padding-left: 20px;
+    color: green;
+}
+
+.col2 {
+    /* 日時の表示 */
+    width: 15%;
+    font-size: 10px;
+    vertical-align: bottom;
+}
+
+.col3 {
+    /* 編集ボタンの表示 */
+    width: 3%;
+    font-size: 10px;
+    vertical-align: bottom;
+}
+
+.col4 {
+    /* 削除ボタンの表示 */
+    width: 3%;
+    font-size: 10px;
+    vertical-align: bottom;
+}
+
+.memo_form {
+    /* フォームのスタイル */
+    width: 97%;
+    padding: 10px 10px;
+    font-size: 36px;
+    border: 1px solid cornflowerblue;
+}
+
+.submit_button {
+    /* 送信ボタンのスタイル */
+    font-size: 24px;
+    background-color: cornflowerblue;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    float: right;
+    border-radius: 5px;
+}
+
+.submit_button:hover {
+    /* 送信ボタンにカーソルを合わせたときのスタイル */
+    background: dodgerblue;
+}
+
+.delete_button {
+    /* 削除ボタンのスタイル */
+    width: 100%;
+    font-size: 18px;
+    background-color: lightcoral;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    margin: 6px 10px 6px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete_button:hover {
+    /* 送信ボタンにカーソルを合わせたときのスタイル */
+    background: tomato;
+}
+
+.back_button {
+    /* 戻るボタンのスタイル */
+    font-size: 20px;
+    padding: 6px 6px 6px 0;
+}
+
+.back_button:hover {
+    /* 戻るボタンにカーソルを合わせたときのスタイル */
+    background: cornflowerblue;
+    color: white;
+}

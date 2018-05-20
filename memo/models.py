@@ -1,5 +1,4 @@
 from django.db import models
-# from django.urls import reverse_lazy
 
 
 class Memo(models.Model):
@@ -10,7 +9,3 @@ class Memo(models.Model):
 
     class Meta:
         db_table = 'memos'
-
-    # def get_absolute_url(self):
-        # redirect_urlを定義
-        # return reverse_lazy('memoapp:memo_list_view')

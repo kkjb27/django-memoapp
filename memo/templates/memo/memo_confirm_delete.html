@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang='ja'>
-<head>
-    <meta charset='UTF-8'>
-    <title>メモアプリ</title>
-</head>
-<body>
-    <p>memo_delete page</p>
+{% extends 'memo/base.html' %}
+
+{% block content %}
+    <p><a href="{% url 'memoapp:memo_list' %}" class="back_button">＜一覧</a></p>
 
     <form method="post">{% csrf_token %}
-        <p>Are you sure you want to delete "{{ object }}"?</p>
-        <input type="submit">
+        <h3>「{{ object.text }}」を削除しますか？</h3>
+        <button type="submit" class="delete_button">削除</button>
     </form>
-
-</body>
-</html>
+{% endblock %}
